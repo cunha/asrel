@@ -86,7 +86,7 @@ class ASRelationshipsDB(object):#{{{
 		pair = pair[1], pair[0]
 		if pair in self.pair2rel:
 			return -1 * self.pair2rel[pair]
-		raise KeyError('unknown relationship %d-%d' % pair[1], pair[0])
+		raise KeyError('unknown relationship %d-%d' % (pair[1], pair[0]))
 	#}}}
 #}}}
 
