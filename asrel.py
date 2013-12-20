@@ -17,6 +17,7 @@ P2C = -1
 P2P = 0
 C2P = 1
 
+rel2str = {P2C: 'P2C', P2P: 'P2P', C2P: 'C2P'}
 
 class ASRelationshipsDB(object):#{{{
 	def __init__(self, fn):#{{{
