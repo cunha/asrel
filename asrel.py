@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 '''AS relationships
 
@@ -26,7 +26,7 @@ class ASRelationshipsDB(object):#{{{
         self.ixps = set()
         self.pair2rel = dict()
 
-        fd = gzip.open(fn, 'r')
+        fd = gzip.open(fn, 'rt')
         for line in fd:
             line = line.strip()
             if self._parse_source(line):
