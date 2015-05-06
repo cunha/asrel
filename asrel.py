@@ -17,7 +17,7 @@ P2C = -1
 P2P = 0
 C2P = 1
 
-rel2str = {P2C: 'P2C', P2P: 'P2P', C2P: 'C2P'}
+rel2str = {P2C: 'P2C', P2P: 'P2P', C2P: 'C2P', None: 'MISS'}
 
 class ASRelationshipsDB(object):#{{{
     def __init__(self, fn):#{{{
@@ -95,6 +95,14 @@ class ASRelationshipsDB(object):#{{{
         except KeyError:
             return missing
     #}}}
+
+    def delete(self, pair): # {{{
+        if pair in self.pair2rel:
+            del self.pair2rel[pair]
+        pair = pair[1], pair[0]
+        if pair in self.pair2rel:
+            del self.pair2rel[pair]
+    # }}}
 #}}}
 
 
